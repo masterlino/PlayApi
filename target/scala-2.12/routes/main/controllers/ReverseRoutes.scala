@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/conf/routes
-// @DATE:Mon Feb 11 20:56:33 CET 2019
+// @DATE:Tue Feb 12 16:17:56 CET 2019
 
 import play.api.mvc.Call
 
@@ -143,38 +143,38 @@ package controllers {
   
   }
 
-  // @LINE:72
+  // @LINE:71
   class ReverseLibroRecetaController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:82
+    // @LINE:81
     def borrarLibroReceta(id:Integer): Call = {
       
       Call("DELETE", _prefix + { _defaultPrefix } + "libroreceta/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
     }
   
-    // @LINE:72
+    // @LINE:71
     def crearLibroReceta(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "libroreceta/")
     }
   
-    // @LINE:79
+    // @LINE:78
     def listarLibroRecetas(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "libroreceta")
     }
   
-    // @LINE:76
+    // @LINE:75
     def consultarLibroRecetaPorNombre(name:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "libroreceta/byName/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("name", name)))
     }
   
-    // @LINE:75
+    // @LINE:74
     def consultarLibroReceta(id:Integer): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "libroreceta/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))

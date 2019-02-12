@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/conf/routes
-// @DATE:Mon Feb 11 20:56:33 CET 2019
+// @DATE:Tue Feb 12 16:17:56 CET 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -211,7 +211,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:72
+  // @LINE:71
   class ReverseLibroRecetaController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -219,7 +219,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:82
+    // @LINE:81
     def borrarLibroReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.borrarLibroReceta",
       """
@@ -229,7 +229,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:72
+    // @LINE:71
     def crearLibroReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.crearLibroReceta",
       """
@@ -239,7 +239,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:79
+    // @LINE:78
     def listarLibroRecetas: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.listarLibroRecetas",
       """
@@ -249,7 +249,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:76
+    // @LINE:75
     def consultarLibroRecetaPorNombre: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.consultarLibroRecetaPorNombre",
       """
@@ -259,7 +259,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:75
+    // @LINE:74
     def consultarLibroReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.consultarLibroReceta",
       """

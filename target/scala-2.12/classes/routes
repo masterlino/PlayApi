@@ -65,7 +65,6 @@ DELETE /ingrediente/:id controllers.IngredienteRController.borrarIngrediente(id:
 
 
 
-
 # Libro de Recetas -----------------------------------
 
 # CREAR UN LIBRORECETA curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"nombre": "otrolibro", "www.gg.com","edad":23}]}' "http://localhost:9000/libroreceta/"

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/conf/routes
-// @DATE:Mon Feb 11 20:56:33 CET 2019
+// @DATE:Tue Feb 12 16:17:56 CET 2019
 
 package router
 
@@ -22,7 +22,7 @@ class Routes(
   RecetaController_0: controllers.RecetaController,
   // @LINE:53
   IngredienteRController_3: controllers.IngredienteRController,
-  // @LINE:72
+  // @LINE:71
   LibroRecetaController_1: controllers.LibroRecetaController,
   val prefix: String
 ) extends GeneratedRouter {
@@ -37,7 +37,7 @@ class Routes(
     RecetaController_0: controllers.RecetaController,
     // @LINE:53
     IngredienteRController_3: controllers.IngredienteRController,
-    // @LINE:72
+    // @LINE:71
     LibroRecetaController_1: controllers.LibroRecetaController
   ) = this(errorHandler, Assets_2, AutorController_4, RecetaController_0, IngredienteRController_3, LibroRecetaController_1, "/")
 
@@ -369,7 +369,7 @@ curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: applicati
     )
   )
 
-  // @LINE:72
+  // @LINE:71
   private[this] lazy val controllers_LibroRecetaController_crearLibroReceta16_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("libroreceta/")))
   )
@@ -387,7 +387,7 @@ curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: applicati
     )
   )
 
-  // @LINE:75
+  // @LINE:74
   private[this] lazy val controllers_LibroRecetaController_consultarLibroReceta17_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("libroreceta/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -405,7 +405,7 @@ curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: applicati
     )
   )
 
-  // @LINE:76
+  // @LINE:75
   private[this] lazy val controllers_LibroRecetaController_consultarLibroRecetaPorNombre18_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("libroreceta/byName/"), DynamicPart("name", """[^/]+""",true)))
   )
@@ -423,7 +423,7 @@ curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: applicati
     )
   )
 
-  // @LINE:79
+  // @LINE:78
   private[this] lazy val controllers_LibroRecetaController_listarLibroRecetas19_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("libroreceta")))
   )
@@ -441,7 +441,7 @@ curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: applicati
     )
   )
 
-  // @LINE:82
+  // @LINE:81
   private[this] lazy val controllers_LibroRecetaController_borrarLibroReceta20_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("libroreceta/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -558,31 +558,31 @@ curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: applicati
         controllers_IngredienteRController_borrarIngrediente15_invoker.call(IngredienteRController_3.borrarIngrediente(id))
       }
   
-    // @LINE:72
+    // @LINE:71
     case controllers_LibroRecetaController_crearLibroReceta16_route(params@_) =>
       call { 
         controllers_LibroRecetaController_crearLibroReceta16_invoker.call(LibroRecetaController_1.crearLibroReceta())
       }
   
-    // @LINE:75
+    // @LINE:74
     case controllers_LibroRecetaController_consultarLibroReceta17_route(params@_) =>
       call(params.fromPath[Integer]("id", None)) { (id) =>
         controllers_LibroRecetaController_consultarLibroReceta17_invoker.call(LibroRecetaController_1.consultarLibroReceta(id))
       }
   
-    // @LINE:76
+    // @LINE:75
     case controllers_LibroRecetaController_consultarLibroRecetaPorNombre18_route(params@_) =>
       call(params.fromPath[String]("name", None)) { (name) =>
         controllers_LibroRecetaController_consultarLibroRecetaPorNombre18_invoker.call(LibroRecetaController_1.consultarLibroRecetaPorNombre(name))
       }
   
-    // @LINE:79
+    // @LINE:78
     case controllers_LibroRecetaController_listarLibroRecetas19_route(params@_) =>
       call { 
         controllers_LibroRecetaController_listarLibroRecetas19_invoker.call(LibroRecetaController_1.listarLibroRecetas)
       }
   
-    // @LINE:82
+    // @LINE:81
     case controllers_LibroRecetaController_borrarLibroReceta20_route(params@_) =>
       call(params.fromPath[Integer]("id", None)) { (id) =>
         controllers_LibroRecetaController_borrarLibroReceta20_invoker.call(LibroRecetaController_1.borrarLibroReceta(id))

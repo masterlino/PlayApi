@@ -10,6 +10,7 @@ import play.data.validation.Constraints.*;
 import play.data.validation.ValidationError;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +35,7 @@ public class Autor extends Model {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JsonManagedReference
+    @Valid
     private List<LibroReceta> libroRecetas;
 
 

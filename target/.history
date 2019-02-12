@@ -186,3 +186,6 @@ exit
 test
 ecit
 exit
+compile
+run
+exit
