@@ -1,0 +1,7 @@
+@(libroRecetas: List[LibroReceta])
+        <?xml version="1.0" encoding="UTF-8"?>
+<LibrosRecetas>
+    @for(libroReceta <- libroRecetas) {
+    @_libroReceta(libroReceta)
+    }
+</LibrosRecetas>

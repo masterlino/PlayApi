@@ -1,0 +1,82 @@
+# Users
+
+#POST    /user    controllers.UserController.createUser()
+#GET     /user/:id    controllers.UserController.retrieveUser(id: Integer)
+#PUT     /user/:id/:newName    controllers.UserController.updateUser(id: Integer, newName: String)
+#DELETE  /user/:id   controllers.UserController.deleteUser(id: Integer)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Autores ------------------------------------
+
+# CREAR UN AUTOR curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"nombre": "Luis", "edad": 13, "libroRecetas":[{"nombre":"miLibro","web":"www.lino.com"}]}' "http://localhost:9000/autor/"
+POST /autor/ controllers.AutorController.crearAutor()
+
+# CONSULTAR UN AUTOR curl --verbose -X GET http://localhost:9000/autor/1
+GET /autor/:id controllers.AutorController.consultarAutor(id: Integer)
+GET /autor/byName/:name controllers.AutorController.consultarAutorPorNombre(name: String)
+#GET /autor/search controllers.AutorController.consultarAutor(name: String)
+
+# LISTAR AUTORES curl --verbose -X GET -H "Accept: application/xml" http://localhost:9000/autores
+GET   /autores    controllers.AutorController.listarAutores
+
+# BORRAR UN AUTOR curl --verbose -X GET http://localhost:9000/autor/1
+DELETE /autor/:id controllers.AutorController.borrarAutor(id: Integer)
+
+
+
+# Recetas ----------------------------------------
+
+# CREAR UNA RECETA
+#curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"titulo": "Pizza", "ingredientes": [{"nombre": "Mozzarella", "cantidad": "100 gr"}, {"nombre": "Tomate", "cantidad": "150 gr"}], "autor": {"nombre": "Lino", "edad": 20}}' "http://localhost:9000/receta/"
+POST /receta/ controllers.RecetaController.crearReceta()
+
+# CONSULTAR UNA RECETA POR NOMBRE
+GET /receta/byName/:name controllers.RecetaController.consultarRecetaPorNombre(name: String)
+
+# CONSULTAR UNA RECETA POR NOMBREAUTOR
+GET /receta/byAuthorName/:name controllers.RecetaController.consultarRecetasAutor(name: String)
+
+# ACTUALIZAR UNA RECETA
+PUT /receta/:id controllers.RecetaController.actualizaReceta(id: Integer)
+
+# BORRAR UNA RECETA
+DELETE /receta/ controllers.RecetaController.borrarReceta(id: Integer)
+
+
+
+# Ingredientes ------------------------------------
+
+# CREAR UN INGREDIENTE
+#curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"nombre": "mozzarella", "cantidad": "150gr"}' "http://localhost:9000/ingrediente/"
+POST /ingrediente/ controllers.IngredienteRController.crearIngrediente()
+
+# CONSULTAR UN INGREDIENTE
+GET /ingrediente/:id controllers.IngredienteRController.consultarIngrediente(id: Integer)
+GET /ingrediente/byName/:name controllers.IngredienteRController.consultarIngredientePorNombre(name: String)
+
+# LISTAR INGREDIENTES
+GET   /ingredientes    controllers.IngredienteRController.listarIngredientes
+
+# BORRAR UN INGREDIENTE
+DELETE /ingrediente/:id controllers.IngredienteRController.borrarIngrediente(id: Integer)
+
+
+
+
+
+# Libro de Recetas -----------------------------------
+
+# CREAR UN LIBRORECETA curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"nombre": "otrolibro", "www.gg.com","edad":23}]}' "http://localhost:9000/libroreceta/"
+POST /libroreceta/ controllers.LibroRecetaController.crearLibroReceta()
+
+# CONSULTAR UN LIBRORECETA
+GET /libroreceta/:id controllers.LibroRecetaController.consultarLibroReceta(id: Integer)
+GET /libroreceta/byName/:name controllers.LibroRecetaController.consultarLibroRecetaPorNombre(name: String)
+
+# LISTAR LIBRORECETA
+GET   /libroreceta    controllers.LibroRecetaController.listarLibroRecetas
+
+# BORRAR UN LIBRORECETA
+DELETE /libroreceta/:id controllers.LibroRecetaController.borrarLibroReceta(id: Integer)

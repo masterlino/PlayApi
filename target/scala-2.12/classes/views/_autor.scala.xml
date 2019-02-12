@@ -1,0 +1,5 @@
+@(autor: Autor)
+<autor>
+    <nombre>@autor.getNombre()</nombre>
+    <edad>@autor.getEdad()</edad>
+</autor>

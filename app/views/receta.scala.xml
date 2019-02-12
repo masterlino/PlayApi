@@ -1,0 +1,20 @@
+@(receta: Receta, autor: Autor, ingredientes: List[IngredienteR])
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Receta>
+    <Titulo>
+        @receta.getTitulo()
+    </Titulo>
+
+    @_autor(autor)
+
+    <Ingredientes>
+        @for(ingrediente <- ingredientes) {
+        @_ingrediente(ingrediente)
+        }
+    </Ingredientes>
+
+    <Preparacion>
+        @receta.getPreparacion()
+    </Preparacion>
+</Receta>

@@ -1,0 +1,21 @@
+author-created=Author successfully created
+recipe-created=Recipe successfully created
+ingredient-created=Ingredient successfully created
+recipe-book-created=Recipe Book successfully created
+
+author-deleted=Autor successfully deleted
+recipe-deleted=Recipe successfully deleted
+ingredient-deleted=Ingredient successfully deleted
+recipe-book-deleted=Recipe Book successfully deleted
+
+author-updated=Author successfully updated
+ingredient-updated=Ingredient successfully updated
+
+author-name-required=An Author name has not been specified
+author-age-toolow=are you sure you know how to write with less than 3 years old?
+author-age-toohigh=you are more than 200 years old? human?
+
+recipe-book-empty=You have an recipe book but its empty
+
+runtime-error=An error has occur
+recipe-notfound=Recipe has not been found on DB

@@ -1,0 +1,18 @@
+author-created=Autor creado correctamente
+recipe-created=Receta creada correctamente
+ingredient-created=Ingrediente creado correctamente
+recipe-book-created=Libro Receta creado correctamente
+
+author-deleted=Usuario eliminado correctamente
+recipe-deleted=Receta eliminado correctamente
+ingredient-deleted=Ingrediente eliminado correctamente
+recipe-book-deleted=Libro Receta eliminado correctamente
+
+author-name-required=No ha especificado un nombre de Autor
+author-age-toolow=Seguro que sabes escribir con menos de 3 años?
+author-age-toohigh=Con esa edad eres humano?
+
+recipe-book-empty=Tienes un libro de recetas pero esta vacio
+
+runtime-error=Se ha producido un error
+recipe-notfound=La receta no ha sido encontrada en la BD

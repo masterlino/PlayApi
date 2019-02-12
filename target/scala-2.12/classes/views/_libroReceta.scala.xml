@@ -1,0 +1,4 @@
+@(libroReceta: LibroReceta)
+<LibroReceta>
+    <name>@libroReceta.getNombre()</name>
+</LibroReceta>

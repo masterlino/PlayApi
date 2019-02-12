@@ -1,0 +1,18 @@
+@(receta: Receta, autor: Autor, ingredientes: List[IngredienteR])
+<Receta>
+    <Titulo>
+        @receta.getTitulo()
+    </Titulo>
+
+    @_autor(autor)
+
+    <Ingredientes>
+        @for(ingrediente <- ingredientes) {
+        @_ingrediente(ingrediente)
+        }
+    </Ingredientes>
+
+    <Preparacion>
+        @receta.getPreparacion()
+    </Preparacion>
+</Receta>

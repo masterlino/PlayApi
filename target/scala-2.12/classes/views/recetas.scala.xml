@@ -1,0 +1,8 @@
+@(recetas: List[Receta])
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Recetas>
+    @for(receta <- recetas) {
+    @_receta(receta, receta.getAutor(), receta.getIngredientes)
+    }
+</Recetas>
