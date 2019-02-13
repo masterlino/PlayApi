@@ -15,5 +15,5 @@ libraryDependencies += "com.h2database" % "h2" % "1.4.194"
 libraryDependencies += guice
 libraryDependencies += evolutions
 libraryDependencies += jdbc
-libraryDependencies += cache
+libraryDependencies += ehcache
 

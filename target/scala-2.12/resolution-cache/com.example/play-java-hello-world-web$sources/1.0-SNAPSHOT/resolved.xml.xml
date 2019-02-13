@@ -4,7 +4,7 @@
 		module="play-java-hello-world-web$sources"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190211134047"
+		publication="20190213170902"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
