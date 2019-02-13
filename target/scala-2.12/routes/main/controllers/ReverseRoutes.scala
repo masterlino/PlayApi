@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/conf/routes
-// @DATE:Tue Feb 12 16:17:56 CET 2019
+// @DATE:Wed Feb 13 17:19:29 CET 2019
 
 import play.api.mvc.Call
 
@@ -138,7 +138,7 @@ package controllers {
     // @LINE:42
     def actualizaReceta(id:Integer): Call = {
       
-      Call("PUT", _prefix + { _defaultPrefix } + "receta/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
+      Call("PATCH", _prefix + { _defaultPrefix } + "receta/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
     }
   
   }

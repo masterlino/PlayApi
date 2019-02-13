@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/conf/routes
-// @DATE:Tue Feb 12 16:17:56 CET 2019
+// @DATE:Wed Feb 13 17:19:29 CET 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -204,7 +204,7 @@ package controllers.javascript {
       "controllers.RecetaController.actualizaReceta",
       """
         function(id0) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "receta/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("id", id0))})
+          return _wA({method:"PATCH", url:"""" + _prefix + { _defaultPrefix } + """" + "receta/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("id", id0))})
         }
       """
     )

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/conf/routes
-// @DATE:Tue Feb 12 16:17:56 CET 2019
+// @DATE:Wed Feb 13 17:19:29 CET 2019
 
 package router
 
@@ -60,7 +60,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """receta/""", """controllers.RecetaController.crearReceta()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """receta/byName/""" + "$" + """name<[^/]+>""", """controllers.RecetaController.consultarRecetaPorNombre(name:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """receta/byAuthorName/""" + "$" + """name<[^/]+>""", """controllers.RecetaController.consultarRecetasAutor(name:String)"""),
-    ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """receta/""" + "$" + """id<[^/]+>""", """controllers.RecetaController.actualizaReceta(id:Integer)"""),
+    ("""PATCH""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """receta/""" + "$" + """id<[^/]+>""", """controllers.RecetaController.actualizaReceta(id:Integer)"""),
     ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """receta/""", """controllers.RecetaController.borrarReceta(id:Integer)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """ingrediente/""", """controllers.IngredienteRController.crearIngrediente()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """ingrediente/""" + "$" + """id<[^/]+>""", """controllers.IngredienteRController.consultarIngrediente(id:Integer)"""),
@@ -243,7 +243,7 @@ curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: applicati
   )
 
   // @LINE:42
-  private[this] lazy val controllers_RecetaController_actualizaReceta9_route = Route("PUT",
+  private[this] lazy val controllers_RecetaController_actualizaReceta9_route = Route("PATCH",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("receta/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_RecetaController_actualizaReceta9_invoker = createInvoker(
@@ -253,7 +253,7 @@ curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: applicati
       "controllers.RecetaController",
       "actualizaReceta",
       Seq(classOf[Integer]),
-      "PUT",
+      "PATCH",
       this.prefix + """receta/""" + "$" + """id<[^/]+>""",
       """ ACTUALIZAR UNA RECETA""",
       Seq()
