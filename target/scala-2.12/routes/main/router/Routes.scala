@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/conf/routes
-// @DATE:Wed Feb 13 17:19:29 CET 2019
+// @DATE:Sun Feb 17 17:58:30 CET 2019
 
 package router
 
@@ -201,7 +201,7 @@ class Routes(
       "POST",
       this.prefix + """receta/""",
       """ CREAR UNA RECETA
-curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"titulo": "Pizza", "ingredientes": [{"nombre": "Mozzarella", "cantidad": "100 gr"}, {"nombre": "Tomate", "cantidad": "150 gr"}], "autor": {"nombre": "Lino", "edad": 20}}' "http://localhost:9000/receta/"""",
+curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"titulo": "Pizza", "ingredientes": [{"nombre": "Mozzarella", "cantidad": "100 gr"}, {"nombre": "Tomate", "cantidad": "150 gr"}], "autor": {"nombre": "Lino", "edad": 20}, "preparacion": "Horno 220 20 min" }' "http://localhost:9000/receta/"""",
       Seq()
     )
   )

@@ -75,7 +75,7 @@ public class Receta extends Model {
 
     public static Receta findByName(String nombre) {
         // API Fluent
-        ExpressionList<Receta> query = find.query().where().eq("nombre", nombre);
+        ExpressionList<Receta> query = find.query().where().eq("titulo", nombre);
         Receta receta = query.findOne();
 
         return receta;

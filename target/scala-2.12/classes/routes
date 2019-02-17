@@ -29,7 +29,7 @@ DELETE /autor/:id controllers.AutorController.borrarAutor(id: Integer)
 # Recetas ----------------------------------------
 
 # CREAR UNA RECETA
-#curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"titulo": "Pizza", "ingredientes": [{"nombre": "Mozzarella", "cantidad": "100 gr"}, {"nombre": "Tomate", "cantidad": "150 gr"}], "autor": {"nombre": "Lino", "edad": 20}}' "http://localhost:9000/receta/"
+#curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"titulo": "Pizza", "ingredientes": [{"nombre": "Mozzarella", "cantidad": "100 gr"}, {"nombre": "Tomate", "cantidad": "150 gr"}], "autor": {"nombre": "Lino", "edad": 20}, "preparacion": "Horno 220 20 min" }' "http://localhost:9000/receta/"
 POST /receta/ controllers.RecetaController.crearReceta()
 
 # CONSULTAR UNA RECETA POR NOMBRE
@@ -39,7 +39,7 @@ GET /receta/byName/:name controllers.RecetaController.consultarRecetaPorNombre(n
 GET /receta/byAuthorName/:name controllers.RecetaController.consultarRecetasAutor(name: String)
 
 # ACTUALIZAR UNA RECETA
-PUT /receta/:id controllers.RecetaController.actualizaReceta(id: Integer)
+PATCH /receta/:id controllers.RecetaController.actualizaReceta(id: Integer)
 
 # BORRAR UNA RECETA
 DELETE /receta/ controllers.RecetaController.borrarReceta(id: Integer)
