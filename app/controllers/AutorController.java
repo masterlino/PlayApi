@@ -151,12 +151,19 @@ public class AutorController extends Controller {
     public Result actualizarAutor (Integer autorId, String nuevoNombre, Integer nuevaEdad) {
         Autor autor = Autor.findById(autorId.longValue());
         if (autor == null) {
+            //mensajes i18n
+            Messages messages = Http.Context.current().messages();
+            System.out.println(messages.at("runtime-error"));
             return Results.notFound();
         }
 
         autor.setNombre(nuevoNombre);
         autor.setEdad(nuevaEdad);
         autor.update();
+
+        //mensajes i18n
+        Messages messages = Http.Context.current().messages();
+        System.out.println(messages.at("author-updated"));
 
         if (request().accepts("application/json")) {
             JsonNode json = play.libs.Json.toJson(autor);
