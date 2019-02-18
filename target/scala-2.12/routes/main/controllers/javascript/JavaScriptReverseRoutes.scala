@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/conf/routes
-// @DATE:Sun Feb 17 17:58:30 CET 2019
+// @DATE:Mon Feb 18 12:49:43 CET 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -39,6 +39,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:25
+    def actualizarAutor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AutorController.actualizarAutor",
+      """
+        function(id0,nuevoNombre1,nuevaEdad2) {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "autor/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("id", id0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("nuevoNombre", nuevoNombre1)) + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("nuevaEdad", nuevaEdad2)])})
+        }
+      """
+    )
+  
     // @LINE:14
     def crearAutor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AutorController.crearAutor",
@@ -69,7 +79,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:25
+    // @LINE:28
     def borrarAutor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AutorController.borrarAutor",
       """
@@ -91,7 +101,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:53
+  // @LINE:59
   class ReverseIngredienteRController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -99,7 +109,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:53
+    // @LINE:59
     def crearIngrediente: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.IngredienteRController.crearIngrediente",
       """
@@ -109,7 +119,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:60
+    // @LINE:66
     def listarIngredientes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.IngredienteRController.listarIngredientes",
       """
@@ -119,7 +129,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:57
+    // @LINE:63
     def consultarIngredientePorNombre: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.IngredienteRController.consultarIngredientePorNombre",
       """
@@ -129,7 +139,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:63
+    // @LINE:69
     def borrarIngrediente: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.IngredienteRController.borrarIngrediente",
       """
@@ -139,7 +149,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:56
+    // @LINE:62
     def consultarIngrediente: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.IngredienteRController.consultarIngrediente",
       """
@@ -151,7 +161,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:33
+  // @LINE:36
   class ReverseRecetaController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -159,7 +169,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:36
+    // @LINE:40
     def consultarRecetaPorNombre: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RecetaController.consultarRecetaPorNombre",
       """
@@ -169,7 +179,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:39
+    // @LINE:44
     def consultarRecetasAutor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RecetaController.consultarRecetasAutor",
       """
@@ -179,7 +189,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:45
+    // @LINE:51
     def borrarReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RecetaController.borrarReceta",
       """
@@ -189,7 +199,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:33
+    // @LINE:36
     def crearReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RecetaController.crearReceta",
       """
@@ -199,7 +209,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:42
+    // @LINE:48
     def actualizaReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RecetaController.actualizaReceta",
       """
@@ -211,7 +221,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:71
+  // @LINE:77
   class ReverseLibroRecetaController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -219,7 +229,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:81
+    // @LINE:87
     def borrarLibroReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.borrarLibroReceta",
       """
@@ -229,7 +239,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:71
+    // @LINE:77
     def crearLibroReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.crearLibroReceta",
       """
@@ -239,7 +249,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:78
+    // @LINE:84
     def listarLibroRecetas: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.listarLibroRecetas",
       """
@@ -249,7 +259,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:75
+    // @LINE:81
     def consultarLibroRecetaPorNombre: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.consultarLibroRecetaPorNombre",
       """
@@ -259,7 +269,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:74
+    // @LINE:80
     def consultarLibroReceta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LibroRecetaController.consultarLibroReceta",
       """

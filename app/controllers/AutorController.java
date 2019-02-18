@@ -148,6 +148,28 @@ public class AutorController extends Controller {
     }
 
     @TimedLog //Composicion de Acciones
+    public Result actualizarAutor (Integer autorId, String nuevoNombre, Integer nuevaEdad) {
+        Autor autor = Autor.findById(autorId.longValue());
+        if (autor == null) {
+            return Results.notFound();
+        }
+
+        autor.setNombre(nuevoNombre);
+        autor.setEdad(nuevaEdad);
+        autor.update();
+
+        if (request().accepts("application/json")) {
+            JsonNode json = play.libs.Json.toJson(autor);
+            return Results.ok(json);
+        } else if (request().accepts("application/xml")) {
+            Content content = views.xml.autor.render(autor);
+            return Results.ok(content);
+        }
+
+        return Results.status(406);
+    }
+
+    @TimedLog //Composicion de Acciones
     public Result borrarAutor(Integer autorId) {
         Autor autor = Autor.findById(autorId.longValue());
         if (autor == null) {

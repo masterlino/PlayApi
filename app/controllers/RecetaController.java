@@ -130,15 +130,19 @@ public class RecetaController extends Controller {
         return Results.status(406);
     }
 
+    @Transactional
     @TimedLog //Composicion de Acciones
     public Result actualizaReceta(Integer recetaId){
+        System.out.println("Entramos " );
         Form<Receta> form = formFactory.form(Receta.class).bindFromRequest();
         if (form.hasErrors()) {
+            System.out.println("El formulario tiene errores: " );
             return Results.badRequest(form.errorsAsJson());
         }
 
         Receta recetaWithUpdates = form.get();
 
+        System.out.println("el id pasado es: " + recetaId.longValue());
         Receta recetaDB = Receta.findById(recetaId.longValue());
         if (recetaDB == null) {
             //mensajes i18n
@@ -148,14 +152,16 @@ public class RecetaController extends Controller {
         }
 
         if (recetaWithUpdates.getTitulo() != null) {
+            System.out.println("Titulo " + recetaWithUpdates.getTitulo());
             recetaDB.setTitulo(recetaWithUpdates.getTitulo());
         }
 
         if (recetaWithUpdates.getPreparacion() != null) {
+            System.out.println("Preparacion " + recetaWithUpdates.getPreparacion());
             recetaDB.setPreparacion(recetaWithUpdates.getPreparacion());
         }
 
-        if (recetaWithUpdates.getPreparacion() != null) {
+        if (recetaWithUpdates.getAutor() != null) {
             recetaDB.getAutor().delete();
             recetaDB.setAutor(recetaWithUpdates.getAutor());
         }
@@ -163,20 +169,30 @@ public class RecetaController extends Controller {
         if (recetaWithUpdates.getIngredientes() != null) {
             //borramos todos los ingredientes antiguos
             List<IngredienteR> ingredientesRDB = recetaDB.getIngredientes();
-            for(IngredienteR ingredienteR : ingredientesRDB){
-                if(ingredienteR.delete()){
-                    //mensajes i18n
-                    Messages messages = Http.Context.current().messages();
-                    System.out.println(messages.at("ingredient-deleted"));
+            List<IngredienteR> ingredientesActuales = recetaWithUpdates.getIngredientes();
+            if (ingredientesRDB != null){
+                System.out.println("antes del for listamos autor " + recetaDB.getAutor().getNombre() );
+                for(IngredienteR ingredienteR : ingredientesActuales){
+                    IngredienteR ingredienteR1 = IngredienteR.findByName(ingredienteR.getNombre());
+                    if(ingredienteR1 != null){
+                        //mensajes i18n
+                        ingredienteR1.setNombre(ingredienteR.getNombre());
+                        ingredienteR1.setCantidad(ingredienteR.getCantidad());
+                        Messages messages = Http.Context.current().messages();
+                        System.out.println(messages.at("ingredient-updates"));
+                    }
+                    else{
+                        //añadimos el nuevo ingrediente
+                        ingredienteR.save();
+                        recetaDB.getIngredientes().add(ingredienteR);
+                        //mensajes i18n
+                        Messages messages = Http.Context.current().messages();
+                        System.out.println(messages.at("ingredient-created"));
+                    }
                 }
-                else{
-                    //mensajes i18n
-                    Messages messages = Http.Context.current().messages();
-                    System.out.println(messages.at("runtime-error"));
-                }
+
             }
 
-            recetaDB.setIngredientes(recetaWithUpdates.getIngredientes());
         }
 
         recetaDB.update();

@@ -21,6 +21,9 @@ GET /autor/byName/:name controllers.AutorController.consultarAutorPorNombre(name
 # LISTAR AUTORES curl --verbose -X GET -H "Accept: application/xml" http://localhost:9000/autores
 GET   /autores    controllers.AutorController.listarAutores
 
+# ACTUALIZAR AUTOR curl --verbose -X PUT -H "Accept: application/json" http://localhost:9000/autor/1/Antonio/34
+PUT   /autor/:id/:nuevoNombre    controllers.AutorController.actualizarAutor(id: Integer, nuevoNombre: String, nuevaEdad: Integer)
+
 # BORRAR UN AUTOR curl --verbose -X GET http://localhost:9000/autor/1
 DELETE /autor/:id controllers.AutorController.borrarAutor(id: Integer)
 
@@ -33,12 +36,15 @@ DELETE /autor/:id controllers.AutorController.borrarAutor(id: Integer)
 POST /receta/ controllers.RecetaController.crearReceta()
 
 # CONSULTAR UNA RECETA POR NOMBRE
+# curl --verbose -X GET http://localhost:9000/receta/byName/Pizza
 GET /receta/byName/:name controllers.RecetaController.consultarRecetaPorNombre(name: String)
 
 # CONSULTAR UNA RECETA POR NOMBREAUTOR
+# curl --verbose -X GET http://localhost:9000/receta/byAuthorName/Lino
 GET /receta/byAuthorName/:name controllers.RecetaController.consultarRecetasAutor(name: String)
 
 # ACTUALIZAR UNA RECETA
+# curl --verbose -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"titulo": "Piza", "ingredientes": [{"nombre": "Mozzarella", "cantidad": "150 gr"}, {"nombre": "Pomodoro", "cantidad": "200 gr"}], "autor": {"nombre": "Lino", "edad": 40}, "preparacion": "Horno 210 25 min" }' "http://localhost:9000/receta/"
 PATCH /receta/:id controllers.RecetaController.actualizaReceta(id: Integer)
 
 # BORRAR UNA RECETA

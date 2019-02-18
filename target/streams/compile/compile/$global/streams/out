@@ -1,13 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/play-sample/app/views/receta.scala.xml:1:1: not found: type Ingrediente[0m
-[0m[[0m[31merror[0m] [0m[0m@(receta: Receta, autor: Autor, ingredientes: List[Ingrediente])[0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/play-sample/app/views/receta.scala.xml:1:52: not found: type Ingrediente[0m
-[0m[[0m[31merror[0m] [0m[0m@(receta: Receta, autor: Autor, ingredientes: List[Ingrediente])[0m
-[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/play-sample/app/views/receta.scala.xml:12:14: missing parameter type[0m
-[0m[[0m[31merror[0m] [0m[0m        @for(ingrediente <- ingredientes) {[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/play-sample/app/views/receta.scala.xml:20:10: not found: type Ingrediente[0m
-[0m[[0m[31merror[0m] [0m[0m</Receta>[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/lino/Documents/Master MIMO/2 Tecnologías del lado del Servidor Cloud computing/Semana 2 3 4/Profe Play Sample/Play-Entrega/app/controllers/RecetaController.java:185:1: ';' expected[0m
+[0m[[0m[31merror[0m] [0m[0m                        System.out.println("ingrediente sin borrar " + ingredienteR.getNombre());[0m
