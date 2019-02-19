@@ -1,4 +1,4 @@
-name := """play-java-hello-world-web"""
+name := """play-java-API-web"""
 organization := "com.example"
 
 version := "1.0-SNAPSHOT"
@@ -16,4 +16,6 @@ libraryDependencies += guice
 libraryDependencies += evolutions
 libraryDependencies += jdbc
 libraryDependencies += ehcache
+libraryDependencies += "org.postgresql" % "postgresql" % "42.1.1"
 
+  
