@@ -17,4 +17,4 @@ libraryDependencies += evolutions
 libraryDependencies += jdbc
 libraryDependencies += ehcache
 libraryDependencies += "org.postgresql" % "postgresql" % "42.1.1"
-//libraryDependencies += "org.postgresql" % "postgresql" % "9.1-901-1.jdbc4"
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.41"
